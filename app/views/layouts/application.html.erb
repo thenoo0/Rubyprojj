@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>myCars!</title>
+
+  <%= stylesheet_link_tag('application', :media => 'all' ) %>
+  <%= javascript_include_tag('application') %>
+  <%= csrf_meta_tags %>
+
+<meta charset="utf-8">
+
+
+
+</head>
+  
+<div class="bg">
+
+  <header>
+    <div class="main wrap">
+      <h1><a href="/start"><img src="../../assets/logo.jpg" alt=""></a></h1>
+      <p>Kraków Bronowicka 11 <span>(012) 660 600 100</span></p>
+    </div>
+
+
+    <nav>
+     <ul class="menu">
+
+        <li></li>
+        
+        <% if current_user %>
+          <li><%= link_to 'Home', :controller => 'start', :action => 'index'  %></li>
+          <li><%= link_to 'Vehicles', vehicles_path %></li>
+          <li><%= link_to "Customers", customers_path %></li>
+          <li><%= link_to "Prices", prices_path %></li>
+          <li><%= link_to "Comments", comments_path %></li>
+          <% if current_user.name == 'admin' %> 
+           <li><%= link_to "Users", users_path%></li>
+          <% end %>
+          <li><%= link_to "Log out", :controller => 'sessions', :action => 'destroy' %></li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+          <li><%= link_to "Sign up", :controller => 'users', :action => 'new'%></li>
+        <% end %>
+    
+  
+      </ul>
+      <div class="clear"></div>
+    </nav>
+
+  </header>
+<body>
+
+<%= yield %>
+  <footer>
+  
+    <p>© 2016 Car Rental Comany</p>
+    <p>Service created by Gancarczyk Piotr, Maślanka Paweł, Lach Mateusz.</p>
+  </footer>
+</div>
+</body>
+</html>
+

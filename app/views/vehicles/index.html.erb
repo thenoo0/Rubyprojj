@@ -1,0 +1,37 @@
+<section id="content">
+
+	<div class="sub-page">
+		<div class="sub-page-left">
+			<h2 class="p4">List of available vehicles:</h2>
+
+			<% @i=0 %>
+			<table>
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+					<th>Action</th>
+				</tr>
+			    <% @vehicles.each do |vehicle| %>
+			    	<%@i=@i+1%>
+			    	<tr>
+			    		<td><%=@i%></td>
+				        <td><%=  vehicle.brand+" "+ vehicle.model  %></td>
+				        <td><%= link_to "Show" , vehicle  %></td>
+				    </tr>
+			    <% end %>
+			  
+			</table>
+
+		<div class="button"> <%= link_to 'Add new car', new_vehicle_path %></div>
+
+		</div>
+		<div class="sub-page-right">
+
+	      <%= render 'shared/openh' %>
+	    
+	   	 </div>
+
+
+	</div>
+
+</section> 

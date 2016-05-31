@@ -1,0 +1,16 @@
+<section id="content">
+ 	<div class="sub-page">
+ 		<div class="sub-page-left">
+
+			<h2>Editing Vehicle</h2>
+
+			<%= render 'form' %>
+
+			<p class="button"><%= link_to 'Delete', vehicle_path, method: :delete, data: {confirm: 'Are you sure?'} %></p>
+			<p class="button"><%= link_to 'Back', vehicles_path %></p>
+		</div>
+		<div class="sub-page-right">
+      		<%= render 'shared/openh' %>
+   		 </div>
+	</div>
+</section>

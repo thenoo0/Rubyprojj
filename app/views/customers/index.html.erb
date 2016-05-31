@@ -1,0 +1,48 @@
+<section id="content">
+
+  <div class="sub-page">
+    <div class="sub-page-left">
+
+      <p id="notice"><%= notice %></p>
+
+      <h2 class="p4">Customers</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Age</th>
+           <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <% @i=0 %>
+          <% @customers.each do |customer| %>
+          <%@i=@i+1%>
+            <tr>
+              <td><%=@i%></td>
+              <td><%= customer.name %></td>
+              <td><%= customer.surname %></td>
+              <td><%= customer.age %></td>
+              <td><%= link_to 'Show', customer %></td>
+
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <div class="button"><%= link_to 'New Customer', new_customer_path %></div>
+      </div>
+    <div class="sub-page-right">
+        <%= render 'shared/openh' %>
+    </div>
+
+
+  </div>
+
+</section> 
