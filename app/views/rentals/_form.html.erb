@@ -1,0 +1,33 @@
+<%= simple_form_for @rental, :url => {:action =>:create, :id=>@vehicle.id} do |f| %>
+<% if @rental.errors.any? %>
+
+
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@customer.errors.count, "error") %> prohibited
+      this article from being saved:
+    </h2>
+    <ul>
+      <% @rental.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+ <div class="form-inputs">
+ 	<div class="field">
+		Customer: <br/> <%= f.text_field :custom %> <br/>
+	</div>
+ 	<div class="field">
+		Borrowed on: <br/> <%= f.text_field :borrowed_on %> <br/>
+	</div>
+	<div class="field">
+		Returned on: <br/> <%= f.text_field :returned_on %> <br/>
+		</div>
+	<div class="field">
+		Description:<br/> <%= f.text_area :description %> <br/>
+	</div>
+
+	<%= f.submit %>
+</div>
+<% end %>

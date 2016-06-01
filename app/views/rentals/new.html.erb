@@ -1,0 +1,42 @@
+<section id="content">
+
+  <div class="sub-page">
+    <div class="sub-page-left box-9">
+		<p id="title"> Vehicle: <%= @vehicle.brand %> <%= @vehicle.model %></p> 
+
+		<div><%= render 'form' %></div>
+
+		<% if @vehicle.rentals.exists? %>
+			<table class="dol">
+				<tr>
+					<th>Customer</th>
+					<th>Borrowed on </th>
+					<th>Returned on</th>
+					<th>Description</th>
+				</tr>
+				<% for item in @vehicle.rentals %>
+					<% if(!item.borrowed_on.nil?)%>	
+						<tr>
+							<td><%= item.custom %></td>
+							<td><%= item.borrowed_on%></td> 
+							<td><%=item.returned_on %></td>
+							<td> <%= item.description %></td>
+						</tr>
+
+					<% end %>	
+				<% end %>
+				</table>
+		<% else %>
+			<p id="warn">No rentals yet</p>
+		<% end %>
+
+
+		<p class="button"><%= link_to "back", @vehicle %></p>
+		
+	</div>
+    <div class="sub-page-right">
+        <%= render 'shared/openh' %>
+    </div>
+
+
+  </div>

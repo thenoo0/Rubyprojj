@@ -24,6 +24,8 @@
 
 		</table>
 		<% if current_user.name == 'admin' %>
+
+			<p class="button"><%= link_to 'Info', :controller=> :rentals, :action=>:new, :id=>@vehicle.id %></p>
 			<p class="button"><%= link_to 'Edit', edit_vehicle_path %></p>
 			<p class="button"><%= link_to 'Back', vehicles_path %></p>
 		<% end %>

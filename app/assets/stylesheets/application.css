@@ -29,11 +29,13 @@ body {
 .main {width:960px; margin:0 auto;}
 /***********************************************************************/
 .price table td  {text-align: center; }
-#disqus_thread {padding:50px;}
 .com {margin: 40px;}
 .sub-page-left table { width: 100%; text-align: center; }
-
 .type {display:block;}
+.dol {margin-top: 20px;}
+#disqus_thread {padding:50px;}
+#title {font-size: 20px; font-weight: bold;}
+#warn {color:#FF0000; font-size:17px; }
 
 
 /***********************************************************************/
