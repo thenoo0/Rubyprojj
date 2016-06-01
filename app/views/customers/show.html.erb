@@ -23,6 +23,7 @@
 		</p>
 
 		<% if current_user.name == 'admin' %>
+			<p class="button"><%= link_to 'Warnings', :controller=>:alerts, :action =>:new, :id=>@customer.id %></p>
 			<p class="button"><%= link_to 'Edit', edit_customer_path %></p>
 			<p class="button"><%= link_to 'Back', customers_path %></p>
 		<%end%>

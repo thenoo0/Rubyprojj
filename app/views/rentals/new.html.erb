@@ -2,9 +2,9 @@
 
   <div class="sub-page">
     <div class="sub-page-left box-9">
-		<p id="title"> Vehicle: <%= @vehicle.brand %> <%= @vehicle.model %></p> 
+		<p id="title"> Vehicle: <%= @vehicle.brand %> <%= @vehicle.model %></p> <hr/>
 
-		<div><%= render 'form' %></div>
+		<div><%= render 'form' %></div><hr/>
 
 		<% if @vehicle.rentals.exists? %>
 			<table class="dol">
@@ -20,7 +20,7 @@
 							<td><%= item.custom %></td>
 							<td><%= item.borrowed_on%></td> 
 							<td><%=item.returned_on %></td>
-							<td> <%= item.description %></td>
+							<td><%= item.description %></td>
 						</tr>
 
 					<% end %>	

@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :comments
   resources :logout
   resources :rentals
+  resources :alerts
 
  root :to => 'start#index'
   # get 'start/index'

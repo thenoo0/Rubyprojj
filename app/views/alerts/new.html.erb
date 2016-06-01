@@ -1,0 +1,39 @@
+<section id="content">
+
+  <div class="sub-page">
+    <div class="sub-page-left box-9">
+
+	<p id="title">Customer: <%= @customer.name %> <%= @customer.surname %></p>
+	<hr/>
+	<div><%= render 'form' %></div>
+
+	<% @i=0 %>
+	<% if @customer.alerts.exists?%>
+
+		<table class="dol">
+			<tr>
+				<th>#</th>
+				<th>Description</th>
+			</tr>
+		<% for item in @customer.alerts %>
+			<% @i=@i+1%>
+			<% if !item.description.nil? %>
+				<tr>
+					<td><%= @i %></td>
+					<td><%= item.description %></td>
+				</tr>
+				<%end%>
+			<% end %>
+		</table>
+	<%else%>
+		<p id="good">No warnings</p>
+	<%end%>
+
+	<p class="button"> <%= link_to "back",@customer%></p>
+	</div>
+    <div class="sub-page-right">
+        <%= render 'shared/openh' %>
+    </div>
+
+
+  </div>

@@ -2,7 +2,7 @@
 	<div class="sub-page">
       <div class="sub-page-left">
 
-		<h2 class="p4">Details</h1>
+		<h2 class="p4">Details</h1><hr/>
 
 
 		<table>
@@ -25,7 +25,7 @@
 		</table>
 		<% if current_user.name == 'admin' %>
 
-			<p class="button"><%= link_to 'Info', :controller=> :rentals, :action=>:new, :id=>@vehicle.id %></p>
+			<p class="button"><%= link_to 'Rental Info', :controller=> :rentals, :action=>:new, :id=>@vehicle.id %></p>
 			<p class="button"><%= link_to 'Edit', edit_vehicle_path %></p>
 			<p class="button"><%= link_to 'Back', vehicles_path %></p>
 		<% end %>
