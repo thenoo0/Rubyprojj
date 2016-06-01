@@ -36,7 +36,9 @@
 
       <br>
 
-      <div class="button"><%= link_to 'New Customer', new_customer_path %></div>
+      <% if current_user.name == 'admin' %>
+        <div class="button"><%= link_to 'New Customer', new_customer_path %></div>
+      <%end%>
       </div>
     <div class="sub-page-right">
         <%= render 'shared/openh' %>

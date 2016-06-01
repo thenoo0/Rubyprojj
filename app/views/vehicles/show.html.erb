@@ -23,8 +23,10 @@
 			</tr>
 
 		</table>
-		<p class="button"><%= link_to 'Edit', edit_vehicle_path %></p>
-		<p class="button"><%= link_to 'Back', vehicles_path %></p>
+		<% if current_user.name == 'admin' %>
+			<p class="button"><%= link_to 'Edit', edit_vehicle_path %></p>
+			<p class="button"><%= link_to 'Back', vehicles_path %></p>
+		<% end %>
 		</div>
 		<div class="sub-page-right">
       		<%= render 'shared/openh' %>

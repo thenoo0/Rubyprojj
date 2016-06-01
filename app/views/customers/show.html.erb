@@ -22,9 +22,10 @@
 		  <%= @customer.age %>
 		</p>
 
-
-		<p class="button"><%= link_to 'Edit', edit_customer_path %></p>
-		<p class="button"><%= link_to 'Back', customers_path %></p>
+		<% if current_user.name == 'admin' %>
+			<p class="button"><%= link_to 'Edit', edit_customer_path %></p>
+			<p class="button"><%= link_to 'Back', customers_path %></p>
+		<%end%>
 		
 		</div>
 		<div class="sub-page-right">
