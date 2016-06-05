@@ -22,4 +22,3 @@ class AlertsController < ApplicationController
 
 
 end
- 
