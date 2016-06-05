@@ -1,19 +1,16 @@
 <section id="content">
- 	<div class="sub-page">
- 		<div class="sub-page-left">
-			<p id="notice"><%= notice %></p>
-
-			<p>
-			  <strong>Name:</strong>
-			  <%= @user.name %>
-			</p>
-			
-			<p class="button"><%= link_to 'Edit', edit_user_path(@user) %></p>
-			<p class="button"><%= link_to 'Back', users_path %></p>
-		
-		</div>
-		<div class="sub-page-right">
-      		<%= render 'shared/openh' %>
-   		</div>
-	</div>
+  <div class="sub-page">
+    <div class="sub-page-left">
+      <p id="notice"><%= notice %></p>
+      <p>
+        <strong>Name:</strong>
+        <%= @user.name %>
+      </p>
+      <p class="button"><%= link_to 'Edit', edit_user_path(@user) %></p>
+      <p class="button"><%= link_to 'Back', users_path %></p>
+    </div>
+    <div class="sub-page-right">
+      <%= render 'shared/openh' %>
+    </div>
+  </div>
 </section>

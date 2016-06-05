@@ -1,7 +1,5 @@
 <%= simple_form_for @alert, :url=> {:action=>:create,:id=>@customer.id} do |f| %>
 <% if @alert.errors.any? %>
-
-
   <div id="error_explanation">
     <h2>
       <%= pluralize(@customer.errors.count, "error") %> prohibited

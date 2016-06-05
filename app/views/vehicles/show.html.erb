@@ -1,37 +1,31 @@
 <section id="content">
-	<div class="sub-page">
-      <div class="sub-page-left">
-
-		<h2 class="p4">Details</h1><hr/>
-
-
-		<table>
-			<tr>
-				<th>Brand</th>
-				<th>Model</th>	
-				<th>Year</th>	
-				<th>Power</th>	
-				<th>Description</th>	
-			</tr>
-			<tr>
-				<td> <%= @vehicle.brand %>  </td>
-				<td> <%= @vehicle.model %>  </td>
-				<td> <%= @vehicle.year.to_s %>  </td>
-				<td> <%= @vehicle.power.to_s %>  </td>
-				<td> <%= @vehicle.description %>  </td>
-
-			</tr>
-
-		</table>
-		<% if current_user.name == 'admin' %>
-
-			<p class="button"><%= link_to 'Rental Info', :controller=> :rentals, :action=>:new, :id=>@vehicle.id %></p>
-			<p class="button"><%= link_to 'Edit', edit_vehicle_path %></p>
-			<p class="button"><%= link_to 'Back', vehicles_path %></p>
-		<% end %>
-		</div>
-		<div class="sub-page-right">
-      		<%= render 'shared/openh' %>
-   		</div>
-	</div>
+  <div class="sub-page">
+    <div class="sub-page-left">
+      <h2 class="p4">Details</h2><hr/>
+      <table>
+        <tr>
+          <th>Brand</th>
+          <th>Model</th>  
+          <th>Year</th>   
+          <th>Power</th>  
+          <th>Description</th>    
+        </tr>
+        <tr>
+          <td> <%= @vehicle.brand %>  </td>
+          <td> <%= @vehicle.model %>  </td>
+          <td> <%= @vehicle.year.to_s %>  </td>
+          <td> <%= @vehicle.power.to_s %>  </td>
+          <td> <%= @vehicle.description %>  </td>
+        </tr>
+      </table>
+      <% if current_user.name == 'admin' %>
+        <p class="button"><%= link_to 'Rental Info', :controller=> :rentals, :action=>:new, :id=>@vehicle.id %></p>
+        <p class="button"><%= link_to 'Edit', edit_vehicle_path %></p>
+        <p class="button"><%= link_to 'Back', vehicles_path %></p>
+      <% end %>
+    </div>
+    <div class="sub-page-right">
+      <%= render 'shared/openh' %>
+    </div>
+  </div>
 </section>

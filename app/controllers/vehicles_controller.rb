@@ -15,7 +15,7 @@ class VehiclesController < ApplicationController
   def edit
   end
 
- def create
+  def create
     @vehicle = Vehicle.new(vehicle_params)
 
     if @vehicle.save
@@ -40,7 +40,6 @@ class VehiclesController < ApplicationController
   end
 
   private
-
     def set_vehicle
       @vehicle = Vehicle.find(params[:id])
     end
@@ -48,5 +47,4 @@ class VehiclesController < ApplicationController
     def vehicle_params
       params.require(:vehicle).permit(:brand, :model, :year, :power, :description  )
     end
-
 end

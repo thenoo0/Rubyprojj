@@ -1,4 +1,3 @@
 class Rental < ActiveRecord::Base
-	
-	belongs_to :vehicle
+  belongs_to :vehicle
 end

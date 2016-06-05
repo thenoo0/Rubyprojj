@@ -5,10 +5,10 @@ class ApplicationController < ActionController::Base
   before_action :authorize
   protected
   def authorize
-  	unless User.find_by(id: session[:user_id])
-  		redirect_to login_url, notice:"Cannot do it"
-  	end
-  	end
+    unless User.find_by(id: session[:user_id])
+      redirect_to login_url, notice:"Cannot do it"
+    end
+    end
   def current_user
   User.where(id: session[:user_id]).first
 

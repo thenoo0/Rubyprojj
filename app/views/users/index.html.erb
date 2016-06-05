@@ -3,10 +3,8 @@
     <div class="sub-page-left">
       <h2>Listing Users</h2><hr/>
       <% if notice %>
-      <p id="notice"> <%=notice %>
+        <p id="notice"> <%=notice %></p>
       <% end %>
-      </p>
-
       <table>
         <thead>
           <tr>
@@ -33,8 +31,8 @@
 
       <div class="button"> <%= link_to 'New User', new_user_path %></div>
     </div>
-        <div class="sub-page-right">
-          <%= render 'shared/openh' %>
+    <div class="sub-page-right">
+      <%= render 'shared/openh' %>
     </div>
   </div>
 </section>

@@ -1,8 +1,6 @@
 <%= simple_form_for(@user) do |f| %>
   <%= f.error_notification %>
-
   <div class="form-inputs">
-
   	<div class="field">
     	<%= f.input :name, :input_html => { :wrap => :soft, :rows => 2}, :label => 'Name: ', :label_html => { :class => 'type' } %>
     </div>

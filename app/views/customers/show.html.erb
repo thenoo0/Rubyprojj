@@ -1,36 +1,29 @@
 <section id="content">
-	<div class="sub-page">
-      <div class="sub-page-left">
+  <div class="sub-page">
+    <div class="sub-page-left">
+      <h2 class="p4">Details</h2>
+      <p id="notice"><%= notice %></p>
+      <p>
+        <strong>Name:</strong>
+        <%= @customer.name %>
+      </p>
+      <p>
+        <strong>Surname:</strong>
+        <%= @customer.surname %>
+      </p>
+      <p>
+        <strong>Age:</strong>
+        <%= @customer.age %>
+      </p>
 
-		<h2 class="p4">Details</h1>
-
-
-		<p id="notice"><%= notice %></p>
-
-		<p>
-		  <strong>Name:</strong>
-		  <%= @customer.name %>
-		</p>
-
-		<p>
-		  <strong>Surname:</strong>
-		  <%= @customer.surname %>
-		</p>
-
-		<p>
-		  <strong>Age:</strong>
-		  <%= @customer.age %>
-		</p>
-
-		<% if current_user.name == 'admin' %>
-			<p class="button"><%= link_to 'Warnings', :controller=>:alerts, :action =>:new, :id=>@customer.id %></p>
-			<p class="button"><%= link_to 'Edit', edit_customer_path %></p>
-			<p class="button"><%= link_to 'Back', customers_path %></p>
-		<%end%>
-		
-		</div>
-		<div class="sub-page-right">
-      		<%= render 'shared/openh' %>
-   		</div>
-	</div>
+      <% if current_user.name == 'admin' %>
+        <p class="button"><%= link_to 'Warnings', :controller=>:alerts, :action =>:new, :id=>@customer.id %></p>
+        <p class="button"><%= link_to 'Edit', edit_customer_path %></p>
+        <p class="button"><%= link_to 'Back', customers_path %></p>
+      <%end%>
+    </div>
+    <div class="sub-page-right">
+      <%= render 'shared/openh' %>
+    </div>
+  </div>
 </section>
